@@ -1,0 +1,151 @@
+body {
+    margin: 0;
+    font-family: Helvetica, sans-serif;
+    background-color: #F5F5F5;
+    color: #444;
+}
+
+/* login_nav.php */
+/* favico */
+#favicon-container {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+#favicon {
+    width: 30px;
+    height: 40px;
+}
+
+.colored-box {
+    background-color: lightseagreen;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    min-height: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    font-size: 30px;
+    font-weight: bold;
+    color: black;
+}
+
+/* Login page */
+.form-block {
+    margin-top: 100px;
+    align-items: center;
+    text-align: center;
+}
+
+#upload_form {
+    padding: 10px 10px 10px 10px;
+}
+
+#submit_box input[type="submit"] {
+    width: 65px;
+    height: 21px;
+    font-size: 15px;
+}
+
+/* Error messages */
+.videoMessage {
+    padding: 10px 10px;
+    color: whitesmoke;
+    width: 300px;
+    margin: 10px auto;
+    text-align: center;
+}
+
+.videoDeleteMessages {
+    padding: 10px 10px;
+    color: whitesmoke;
+    width: 300px;
+    margin: 10px auto;
+    text-align: center;
+}
+
+.imageMessages {
+    padding: 10px 10px;
+    color: whitesmoke;
+    width: 300px;
+    margin: 10px auto;
+    text-align: center;
+}
+
+.imageDeleteMessages {
+    padding: 10px 10px;
+    color: whitesmoke;
+    width: 300px;
+    margin: 10px auto;
+    text-align: center;
+}
+
+.lessonMessages {
+    padding: 10px 10px;
+    color: whitesmoke;
+    width: 300px;
+    margin: 10px auto;
+    text-align: center;
+}
+
+.lessonDeleteMessages {
+    padding: 10px 10px;
+    color: whitesmoke;
+    width: 300px;
+    margin: 10px auto;
+    text-align: center;
+}
+
+.resourceMessages {
+    padding: 10px 10px;
+    color: whitesmoke;
+    width: 300px;
+    margin: 10px auto;
+    text-align: center;
+}
+
+.resourceDeleteMessages {
+    padding: 10px 10px;
+    color: whitesmoke;
+    width: 300px;
+    margin: 10px auto;
+    text-align: center;
+}
+
+.good {
+    background-color: limegreen;
+}
+
+.bad {
+    background-color: red;
+}
+
+/* Uploading lesson plans */
+#subject {
+    background-color: lightseagreen;
+    font-size: 16px;
+    padding: 3px;
+    margin-bottom: 10px;
+}
+
+.document-input {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.document-input label {
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.submit-button input[type="submit"] {
+    margin-top: 10px;
+    width: 131px;
+    height: 25px;
+    font-size: 15px;
+}

@@ -1,0 +1,70 @@
+body {
+    margin: 0;
+    font-family: Helvetica, sans-serif;
+    background-color: #F5F5F5;
+    color: #444;
+}
+
+/* login_nav.php */
+/* favico */
+#favicon-container {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+#favicon {
+    width: 30px;
+    height: 40px;
+}
+
+.colored-box {
+    background-color: lightseagreen;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    min-height: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    font-size: 30px;
+    font-weight: bold;
+    color: black;
+}
+
+/* Login page */
+.form-block {
+    margin-top: 100px;
+    align-items: center;
+    text-align: center;
+}
+
+#login_form {
+    padding: 10px 10px 10px 10px;
+}
+
+#submit_box input[type="submit"] {
+    width: 65px;
+    height: 21px;
+    font-size: 15px;
+}
+
+/* Error messages */
+.message {
+    padding: 10px 10px;
+    color: black;
+    width: 300px;
+    margin: 10px auto;
+    text-align: center;
+}
+
+.good {
+    background-color: limegreen;
+}
+
+.bad {
+    background-color: red;
+}

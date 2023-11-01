@@ -1,0 +1,421 @@
+body {
+    margin: 0;
+    font-family: Helvetica, sans-serif;
+    background-color: #F5F5F5;
+    color: #444;
+}
+
+/* nav.php */
+
+/* favico */
+#favicon-container {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+#favicon {
+    width: 30px;
+    height: 40px;
+}
+
+/* Nav bar at top of each page */
+.colored-box {
+    background-color: lightseagreen;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    min-height: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.nav-bar {
+    max-width: 1200px;
+    text-align: center;
+}
+
+ul li {
+    display:inline;
+    margin: 10px 10px;
+}
+
+ul li a {
+    color: black;
+    font-size: 16px;
+}
+
+ul li a:hover {
+    text-decoration: underline;
+    color: blue;
+}
+
+/* Footer */
+#footer{
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    background-color: darkgray;
+    color: white;
+    font-size: 11px;
+    margin-top: auto;
+}
+
+.first::before {
+    content: "\00a9";
+    padding-right: 5px;
+}
+
+#footer > li {
+    display: inline;
+    border-left: solid 1px darkgray;
+    padding: 0 10px;
+    color: black;
+}
+
+#footer > li a{
+    color: black;
+}
+
+#footer > li a:hover {
+    color:blue;
+}
+
+/* Header */
+.persisted_header {
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 120px;
+    text-indent: 20px;
+}
+.header {
+    font-size: 40px;
+    font-weight: bold;
+    margin-top: 30px;
+    padding-bottom: 20px;
+    padding-top: 8px;
+    text-indent: 50px;
+    background-color: lightgray;
+}
+
+/* blog.php */
+
+/* blog-table */
+.blog-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 40px;
+}
+
+.blog-table th {
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+}
+
+.blog-table tr:nth-child(even) {
+    background-color: lightgray;
+}
+
+.blog-table tr td {
+    height: 100px;
+    width: 200px;
+}
+
+.blog-table td:first-child {
+    text-indent: 50px;
+}
+
+.blog-table tr td a {
+    text-indent: 50px;
+    color: blue;
+}
+
+.blog-table tr td a:hover{
+    text-decoration: underline;
+    color: lightseagreen;
+}
+
+/* lessonplan.php */
+
+/*Drop-down menu*/
+#show {
+    padding: 26px;
+    margin-left: 15px;
+}
+
+h4.daily-schedules {
+    float: left;
+    font-size: 19px;
+    text-indent: 10px;
+}
+
+#schedules {
+    position: relative;
+    float: left;
+    top: 4px;
+    margin-left: 10px;
+    margin-top: 22px;
+    -webkit-appearance: menulist-button;
+    height: 22px;
+    background-color: lightseagreen;
+}
+
+option {
+    display: block;
+    white-space-collapse: collapse;
+    text-wrap: none;
+    min-height: 1.2em;
+    padding: 0 2px 1px;
+}
+
+/* Upload box styling */
+.upload-box input[type="submit"] {
+    float: right;
+    margin-right: 40px;
+    margin-top: 20px;
+    width: 100px;
+    height: 50px;
+}
+
+/* Images/Videos upload box styling */
+.low-upload-box input[type="submit"] {
+    float: right;
+    margin-right: 40px;
+    margin-top: 10px;
+    width: 100px;
+    height: 50px;
+}
+
+/* lesson-plan-table */
+
+.lesson-plan-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 90px;
+}
+
+.lesson-plan-table td:first-child {
+    font-weight: bold;
+    text-indent: 10px;
+}
+
+.lesson-plan-table tr:nth-child(even) {
+    background-color: white;
+}
+
+.lesson-plan-table tr:nth-child(odd) {
+    background-color: lightgray;
+}
+
+.lesson-plan-table td {
+    height: 150px;
+    width: 200px;
+    border: none;
+    padding: 10px;
+    text-align: center;
+}
+
+.document-link {
+    color: black;
+}
+
+.document-link:hover {
+    color: blue;
+}
+
+/* resources.php */
+
+/* resources-table */
+.resources-table {
+    border: 2px solid black;
+    margin-top: 80px;
+    margin-left: 10px;
+}
+
+.resources-table td:first-child {
+    font-weight: bold;
+}
+
+.resources-table tr td {
+    height: 150px;
+    width: 200px;
+    border: none;
+}
+
+/* how-to-div */
+.how-to-div {
+    margin-top: 90px;
+    margin-left: 10px;
+    padding-bottom: 60px;
+}
+
+.how-to-div h3 {
+    font-weight: bold;
+    font-size: 30px;
+    color: lightseagreen;
+}
+
+.paragraph {
+    line-height: 1.5;
+}
+
+/* homebase.php */
+
+/* top of page Previously added... table*/
+.prev-added-table {
+    margin-top: 10px;
+    margin-bottom: 0;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.prev-added-table th, .prev-added-table td {
+    border: 1px solid lightgray;
+    border-collapse: collapse;
+}
+
+.prev-added-table th {
+    text-align: left;
+    background-color: lightgray;
+}
+
+.prev-added-table tr td {
+    width: 700px;
+}
+
+.prev-added-table tr td a {
+    color: black;
+}
+
+.prev-added-table tr td a:hover {
+    color: blue;
+}
+
+/* Calendar */
+.month {
+    text-align: left;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.month ul {
+    margin: 0;
+    padding: 0;
+}
+
+.prev, .next {
+    font-size: 12px;
+}
+
+.weekdays {
+    margin: 0;
+    padding: 10px 0;
+    color:lightgray;
+    font-size: 19px;
+}
+
+.weekdays li {
+    display: inline-block;
+    width: 12%;
+    text-align: center;
+}
+
+.days {
+    padding: 10px 0;
+    background: lightgray;
+    margin: 0;
+}
+
+.days li {
+    list-style-type: none;
+    display: inline-block;
+    width: 12%;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size:18px;
+    color: lightseagreen;
+}
+
+.days li .active {
+    padding: 5px;
+    background: lightseagreen;
+    color: white;
+}
+
+.space {
+    margin-top: 50px;
+}
+
+/* images.php & videos.php */
+
+/* video box styling */
+.video-container {
+    margin-top: 70px;
+    margin-bottom: 0;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.video-box {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    border: 1px black solid;
+    width: 120px;
+    height: 120px;
+    text-align: center;
+    line-height: 100px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-top: 10px;
+    float: right;
+    padding: 10px 10px 10px 10px;
+}
+
+.video-box a {
+    color: black;
+}
+
+.video-box a:hover {
+    font-size: 10px;
+    color: blue;
+}
+
+/* image box styling */
+.image-container {
+    margin-top: 70px;
+    margin-bottom: 0;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.image-box {
+    border: 1px black solid;
+    width: 200px;
+    text-align: center;
+    margin: 10px;
+}
+
+.image-box img {
+    max-width: 100%;
+    max-height: 100px;
+    display: block;
+    margin: 0 auto;
+}
+
+.image-title {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding: 5px;
+    font-weight: bold;
+    font-size: 12px;
+    text-align: center;
+}
+
+
