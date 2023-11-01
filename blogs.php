@@ -11,7 +11,6 @@
 
     if ($_SESSION['authenticated']) {
         // The user is authenticated, fetch their first name
-        //hello
         if (isset($_SESSION['user_id'])) {
             $user_id = $_SESSION['user_id'];
             $user = $dao->getUserInfo($user_id);
