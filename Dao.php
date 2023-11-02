@@ -135,13 +135,24 @@ class Dao {
         return $count > 0;
     }
 
-    public function saveImage($title, $imagePath, $date) {
+//    public function saveImage($title, $imagePath, $date) {
+//        $conn = $this->getConnection();
+//        $user_id = $_SESSION['user_id'];
+//        $saveQuery = "INSERT INTO images (title, image_path, user_id, date) VALUES (:title, :image_path, :user_id, :date)";
+//        $stmt = $conn->prepare($saveQuery);
+//        $stmt->bindParam(":title", $title);
+//        $stmt->bindParam(":image_path", $imagePath);
+//        $stmt->bindParam(":user_id", $user_id);
+//        $stmt->bindParam(":date", $date);
+//        $stmt->execute();
+//    }
+
+    public function saveImage($title, $date) {
         $conn = $this->getConnection();
         $user_id = $_SESSION['user_id'];
-        $saveQuery = "INSERT INTO images (title, image_path, user_id, date) VALUES (:title, :image_path, :user_id, :date)";
+        $saveQuery = "INSERT INTO images (title, user_id, date) VALUES (:title, :image_path, :user_id, :date)";
         $stmt = $conn->prepare($saveQuery);
         $stmt->bindParam(":title", $title);
-        $stmt->bindParam(":image_path", $imagePath);
         $stmt->bindParam(":user_id", $user_id);
         $stmt->bindParam(":date", $date);
         $stmt->execute();
