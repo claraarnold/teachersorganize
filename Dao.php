@@ -1,10 +1,10 @@
 <?php
 
 class Dao {
-    private $host = "localhost";
-    private $db = "teachers_organize_db";
-    private $user = "root";
-    private $pass = "root";
+    private $host = "l6glqt8gsx37y4hs.cbetxkdyhwsb.us-east-1.rds.amazonaws.com";
+    private $db = "pzuvo5clr9xvobwh";
+    private $user = "u8b5s6qsh7tj80n2";
+    private $pass = "fl2sibhflckdr9vh";
 
     public function getConnection () {
         return
