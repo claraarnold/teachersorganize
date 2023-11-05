@@ -29,7 +29,7 @@ $dao = new Dao();
 <body>
 <div class="form-block">
     <h1>Upload an image below: </h1>
-    <form method="post" action="image_upload_handler.php" enctype="multipart/form-data">
+    <form method="post" action="image_upload_handler.php">
         <div id="upload_form">Image title <input type="text" value = "<?php echo isset($_SESSION['post']['title']) ? $_SESSION['post']['title'] : ''; ?>" name="title"/></div>
         <div id="upload_form">Image link <input type="text"
                                                 value="<?php echo isset($_SESSION['post']['link']) ? $_SESSION['post']['link'] : ''; ?>"

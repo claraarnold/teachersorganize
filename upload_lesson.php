@@ -29,7 +29,7 @@ $dao = new Dao();
 <body>
 <div class="form-block">
     <h1>Upload a lesson-plan: </h1>
-    <form method="post" action="lesson_upload_handler.php" enctype="multipart/form-data">
+    <form method="post" action="lesson_upload_handler.php">
         <label for="subject">Select Subject:</label>
         <select name="subject" id="subject">
             <option value="Math">Math</option>

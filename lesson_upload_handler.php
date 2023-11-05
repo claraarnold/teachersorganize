@@ -39,9 +39,9 @@ if(empty($name)) {
 }
 
 if (empty($link)) {
-    $videoMessages['bad'][] = "Please enter the video LINK";
+    $lessonMessages['bad'][] = "Please enter the video LINK";
 } elseif (!preg_match($linkPattern, $link)) {
-    $videoMessages['bad'][] = "Please enter a valid LINK";
+    $lessonMessages['bad'][] = "Please enter a valid LINK";
 }
 
 if (empty($date)) {
