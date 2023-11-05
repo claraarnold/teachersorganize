@@ -135,24 +135,15 @@ class Dao {
         return $count > 0;
     }
 
-//    public function saveImage($title, $imagePath, $date) {
-//        $conn = $this->getConnection();
-//        $user_id = $_SESSION['user_id'];
-//        $saveQuery = "INSERT INTO images (title, image_path, user_id, date) VALUES (:title, :image_path, :user_id, :date)";
-//        $stmt = $conn->prepare($saveQuery);
-//        $stmt->bindParam(":title", $title);
-//        $stmt->bindParam(":image_path", $imagePath);
-//        $stmt->bindParam(":user_id", $user_id);
-//        $stmt->bindParam(":date", $date);
-//        $stmt->execute();
-//    }
-
-    public function saveImage($title, $date) {
+    public function saveImage($title, $link, $date) {
         $conn = $this->getConnection();
         $user_id = $_SESSION['user_id'];
-        $saveQuery = "INSERT INTO images (title, user_id, date) VALUES (:title, :user_id, :date)";
+        $saveQuery = "INSERT INTO images 
+                        (title, link, user_id, date) 
+                        VALUES (:title, :link, :user_id, :date)";
         $stmt = $conn->prepare($saveQuery);
         $stmt->bindParam(":title", $title);
+        $stmt->bindParam(":link", $link);
         $stmt->bindParam(":user_id", $user_id);
         $stmt->bindParam(":date", $date);
         $stmt->execute();
@@ -161,9 +152,9 @@ class Dao {
     public function getImages() {
         $conn = $this->getConnection();
         $user_id = $_SESSION['user_id'];
-        $selectQuery = "SELECT title, image_path, date FROM images WHERE user_id = :user_id";
-        $stmt = $conn->prepare($selectQuery);
-        $stmt->bindParam(":user_id", $user_id, PDO::PARAM_INT);
+        $query = "SELECT title, link FROM images WHERE user_id = :user_id";
+        $stmt = $conn->prepare($query);
+        $stmt->bindParam(":user_id", $user_id);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
@@ -171,9 +162,9 @@ class Dao {
     public function getImagesByDate($selectedDate) {
         $conn = $this->getConnection();
         $user_id = $_SESSION['user_id'];
-        $selectQuery = "SELECT title, image_path FROM images WHERE user_id = :user_id AND date = :selectedDate";
-        $stmt = $conn->prepare($selectQuery);
-        $stmt->bindParam(":user_id", $user_id, PDO::PARAM_INT);
+        $query = "SELECT title, link FROM images WHERE user_id = :user_id AND date = :selectedDate";
+        $stmt = $conn->prepare($query);
+        $stmt->bindParam(":user_id", $user_id);
         $stmt->bindParam(":selectedDate", $selectedDate);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -181,20 +172,26 @@ class Dao {
 
     public function deleteImage($title) {
         $conn = $this->getConnection();
-        $deleteQuery = "DELETE FROM images WHERE title = :title";
-        $stmt = $conn->prepare($deleteQuery);
-        $stmt->bindParam(":title", $title);
-        return $stmt->execute();
+        $deleteImage =
+            "DELETE FROM images
+            WHERE title = :title";
+        $q = $conn->prepare($deleteImage);
+        $q->bindParam(":title", $title);
+        $q->execute();
     }
 
     public function imageExists($title) {
         $conn = $this->getConnection();
-        $selectQuery = "SELECT title FROM images WHERE title = :title";
-        $stmt = $conn->prepare($selectQuery);
-        $stmt->bindParam(":title", $title);
-        $stmt->execute();
-        $result = $stmt->fetch(PDO::FETCH_ASSOC);
-        return ($result !== false);
+
+        $checkImageExists = "SELECT COUNT(*) FROM images WHERE title = :title";
+        $q = $conn->prepare($checkImageExists);
+        $q->bindParam(":title", $title);
+        $q->execute();
+
+        $count = $q->fetchColumn();
+
+        // If the count is greater than 0, the video with the given title exists
+        return $count > 0;
     }
 
     public function saveDocument($subject, $documentPath, $name, $date) {

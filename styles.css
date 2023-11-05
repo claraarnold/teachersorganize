@@ -395,27 +395,26 @@ option {
 }
 
 .image-box {
-    border: 1px black solid;
-    width: 200px;
-    text-align: center;
-    margin: 10px;
-}
-
-.image-box img {
-    max-width: 100%;
-    max-height: 100px;
-    display: block;
-    margin: 0 auto;
-}
-
-.image-title {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    padding: 5px;
-    font-weight: bold;
-    font-size: 12px;
+    border: 1px black solid;
+    width: 120px;
+    height: 120px;
     text-align: center;
+    line-height: 100px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-top: 10px;
+    float: right;
+    padding: 10px 10px 10px 10px;
 }
 
+.image-box a {
+    color: black;
+}
 
+.image-box a:hover {
+    font-size: 10px;
+    color: blue;
+}

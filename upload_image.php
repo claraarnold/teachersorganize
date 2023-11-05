@@ -31,7 +31,10 @@ $dao = new Dao();
     <h1>Upload an image below: </h1>
     <form method="post" action="image_upload_handler.php" enctype="multipart/form-data">
         <div id="upload_form">Image title <input type="text" value = "<?php echo isset($_SESSION['post']['title']) ? $_SESSION['post']['title'] : ''; ?>" name="title"/></div>
-        <div id="upload_form">Image <input type="file" name="image" id="image"/></div>
+        <div id="upload_form">Image link <input type="text"
+                                                value="<?php echo isset($_SESSION['post']['link']) ? $_SESSION['post']['link'] : ''; ?>"
+                                                name="link"
+                                                required pattern="https?://.+" title="https?://.+"></div>
         <div id="upload_form">Date <input type="date" name="date"/></div>
         <div id="submit_box"><input type="submit" name="Upload" value="Upload"/></div>
     </form>
