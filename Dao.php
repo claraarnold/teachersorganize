@@ -150,7 +150,7 @@ class Dao {
     public function saveImage($title, $date) {
         $conn = $this->getConnection();
         $user_id = $_SESSION['user_id'];
-        $saveQuery = "INSERT INTO images (title, user_id, date) VALUES (:title, :image_path, :user_id, :date)";
+        $saveQuery = "INSERT INTO images (title, user_id, date) VALUES (:title, :user_id, :date)";
         $stmt = $conn->prepare($saveQuery);
         $stmt->bindParam(":title", $title);
         $stmt->bindParam(":user_id", $user_id);

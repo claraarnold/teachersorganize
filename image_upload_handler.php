@@ -36,13 +36,13 @@ if($_FILES['image']['error'] != UPLOAD_ERR_OK) {
 $target_dir = "websiteImages/";
 
 // Use the correct name for the file input (image) in $_FILES array
-$target_file = $target_dir . basename($_FILES["image"]["name"]);
+$target_file = $target_dir . str_replace(' ', '_', basename($_FILES["image"]["name"]));
 
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 
 // Check if the image file is an actual image
-if(isset($_POST["submit"])) {
+if(isset($_POST["Upload"])) {
     $check = getimagesize($_FILES["image"]["tmp_name"]);
     if($check !== false) {
         $uploadOk = 1;
@@ -52,14 +52,15 @@ if(isset($_POST["submit"])) {
 }
 
 if($uploadOk == 0) {
-    $imageMessages['bad'][] = "Error uploading image.";
+    $imageMessages['bad'][] = "Error uploading image: " . $_FILES['image']['error'];
 } else {
     if(move_uploaded_file($_FILES['image']["tmp_name"], $target_file)) {
         $dao->saveImage($title, $date);
         header('Location: images.php');
         exit();
     } else {
-        $imageMessages['bad'][] = "Error uploading image.";
+        $imageMessages['bad'][] = "Target file: " . $target_file;
+        $imageMessages['bad'][] = "Error moving uploaded image.";
     }
 }
 
