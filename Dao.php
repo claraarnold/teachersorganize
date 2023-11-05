@@ -217,7 +217,7 @@ class Dao {
             return []; // Return an empty array if no date is selected
         }
 
-        $query = "SELECT document_link, name FROM lesson_plans WHERE subject = :subject AND user_id = :user_id AND date = :date";
+        $query = "SELECT link, name FROM lesson_plans WHERE subject = :subject AND user_id = :user_id AND date = :date";
         $stmt = $conn->prepare($query);
         $stmt->bindParam(":subject", $subject);
         $stmt->bindParam(":user_id", $user_id);
@@ -246,23 +246,23 @@ class Dao {
         return ($result !== false);
     }
 
-    public function saveResource($subject, $documentPath, $name) {
+    public function saveResource($subject, $link, $name) {
         $conn = $this->getConnection();
         $user_id = $_SESSION['user_id'];
-        $saveQuery = "INSERT INTO resources (subject, document_path, user_id, name) 
-                        VALUES (:subject, :documentPath, :user_id, :name)";
+        $saveQuery = "INSERT INTO resources (subject, link, name, user_id) 
+                        VALUES (:subject, :link, :name, :user_id)";
         $stmt = $conn->prepare($saveQuery);
         $stmt->bindParam(":subject", $subject);
-        $stmt->bindParam(":documentPath", $documentPath);
-        $stmt->bindParam(":user_id", $user_id);
+        $stmt->bindParam(":link", $link);
         $stmt->bindParam(":name", $name);
+        $stmt->bindParam(":user_id", $user_id);
         $stmt->execute();
     }
 
     public function getDocumentsByRow($subject) {
         $conn = $this->getConnection();
         $user_id = $_SESSION['user_id'];
-        $query = "SELECT document_path, name FROM resources WHERE subject = :subject AND user_id = :user_id";
+        $query = "SELECT link, name FROM resources WHERE subject = :subject AND user_id = :user_id";
         $stmt = $conn->prepare($query);
         $stmt->bindParam(":subject", $subject);
         $stmt->bindParam(":user_id", $user_id);

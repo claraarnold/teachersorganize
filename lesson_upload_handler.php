@@ -22,9 +22,6 @@ $name = isset($_POST['name']) ? trim($_POST['name']) : '';
 $link = trim($_POST['link']);
 $date = $_POST['date'];
 
-// Regular expression to match valid links
-$linkPattern = '/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w\.-]*)*\/?$/';
-
 // Check if all forms filled in
 if(empty($subject)) {
     $lessonMessages['bad'][] = "Please select a subject from the drop-down menu above.";
@@ -40,8 +37,6 @@ if(empty($name)) {
 
 if (empty($link)) {
     $lessonMessages['bad'][] = "Please enter the video LINK";
-} elseif (!preg_match($linkPattern, $link)) {
-    $lessonMessages['bad'][] = "Please enter a valid LINK";
 }
 
 if (empty($date)) {

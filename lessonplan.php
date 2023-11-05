@@ -92,7 +92,7 @@ if (!empty($selectedDate)) {
 
             if (!empty($documents)) {
                 foreach ($documents as $document) {
-                    $document_link = $document['document_link'];
+                    $document_link = $document['link'];
                     $document_name = $document['name'];
 
                     // new column for each document name

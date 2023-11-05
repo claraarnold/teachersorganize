@@ -19,6 +19,7 @@ $resourceMessages['bad'] = array();
 
 $subject = isset($_POST['subject']) ? trim($_POST['subject']) : '';
 $name = isset($_POST['name']) ? trim($_POST['name']) : '';
+$link = trim($_POST['link']);
 
 // Check if name and file are filled in
 if(empty($subject)) {
@@ -33,6 +34,10 @@ if(empty($name)) {
     $resourceMessages['bad'][] = "Please enter the document NAME";
 }
 
+if (empty($link)) {
+    $resourceMessages['bad'][] = "Please enter the video LINK";
+}
+
 if (count($resourceMessages['bad']) > 0) {
     // Set error messages and redirect back to upload_resources.php
     $_SESSION['resourceMessages'] = $resourceMessages;
@@ -40,23 +45,8 @@ if (count($resourceMessages['bad']) > 0) {
     header('Location: upload_resources.php');
     exit();
 } else { // if no bad messages
-    $uploadDirectory = "resources/";
-
-    $uploadedFile = $_FILES['document']['tmp_name'];
-    $uploadedFileName = basename($_FILES['document']['name']);
-
-    $newFilePath = $uploadDirectory . $uploadedFileName;
-
-    if (!move_uploaded_file($uploadedFile, $newFilePath)) {
-        // Handle file move error
-        $resourceMessages['bad'][] = "Error moving the uploaded document.";
-        $_SESSION['resourceMessages'] = $resourceMessages;
-        header('Location: upload_resources.php');
-        exit();
-    }
-
-    // Save the resource in database
-    $dao->saveResource($subject, $newFilePath, $name);
+    // Save the document in database
+    $dao->saveResource($subject, $link, $name);
     header('Location: resources.php');
     exit();
 }
