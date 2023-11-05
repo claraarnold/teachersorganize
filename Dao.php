@@ -194,14 +194,14 @@ class Dao {
         return $count > 0;
     }
 
-    public function saveDocument($subject, $documentPath, $name, $date) {
+    public function saveDocument($subject, $link, $name, $date) {
         $conn = $this->getConnection();
         $user_id = $_SESSION['user_id'];
-        $saveQuery = "INSERT INTO lesson_plans (subject, document_path, name, user_id, date) 
-                        VALUES (:subject, :documentPath, :name, :user_id, :date)"; //user
+        $saveQuery = "INSERT INTO lesson_plans (subject, link, name, user_id, date) 
+                        VALUES (:subject, :link, :name, :user_id, :date)"; //user
         $stmt = $conn->prepare($saveQuery);
         $stmt->bindParam(":subject", $subject);
-        $stmt->bindParam(":documentPath", $documentPath);
+        $stmt->bindParam(":link", $link);
         $stmt->bindParam(":name", $name);
         $stmt->bindParam(":user_id", $user_id);
         $stmt->bindParam(":date", $date);
@@ -217,7 +217,7 @@ class Dao {
             return []; // Return an empty array if no date is selected
         }
 
-        $query = "SELECT document_path, name FROM lesson_plans WHERE subject = :subject AND user_id = :user_id AND date = :date";
+        $query = "SELECT document_link, name FROM lesson_plans WHERE subject = :subject AND user_id = :user_id AND date = :date";
         $stmt = $conn->prepare($query);
         $stmt->bindParam(":subject", $subject);
         $stmt->bindParam(":user_id", $user_id);

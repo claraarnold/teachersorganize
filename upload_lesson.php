@@ -40,13 +40,13 @@ $dao = new Dao();
             <option value="Spanish">Spanish</option>
             <option value="Art">Art</option>
         </select>
-        <div id="upload_form">Document name <input type="text"
-                                                   value = "<?php echo isset($_SESSION['post']['name']) ? $_SESSION['post']['name'] : ''; ?>"
-                                                   name="name"/></div>
-        <div class="document-input">
-            <label for="document">Choose a Document:</label>
-            <input type="file" name="document" id="document">
-        </div>
+        <div id="upload_form">Document title <input type="text"
+                                                    value = "<?php echo isset($_SESSION['post']['name']) ? $_SESSION['post']['name'] : ''; ?>"
+                                                    name="name"/></div>
+        <div id="upload_form">Document link <input type="text"
+                                                   value="<?php echo isset($_SESSION['post']['link']) ? $_SESSION['post']['link'] : ''; ?>"
+                                                   name="link"
+                                                   required pattern="https?://.+" title="https?://.+"></div>
         <div id="upload_form">Date <input type="date" name="date"/></div>
         <div class="submit-button">
             <input type="submit" name="upload" value="Upload Document">

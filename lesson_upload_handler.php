@@ -19,7 +19,11 @@ $lessonMessages['bad'] = array();
 
 $subject = isset($_POST['subject']) ? trim($_POST['subject']) : '';
 $name = isset($_POST['name']) ? trim($_POST['name']) : '';
+$link = trim($_POST['link']);
 $date = $_POST['date'];
+
+// Regular expression to match valid links
+$linkPattern = '/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w\.-]*)*\/?$/';
 
 // Check if all forms filled in
 if(empty($subject)) {
@@ -34,6 +38,12 @@ if(empty($name)) {
     $lessonMessages['bad'][] = "Please enter the document NAME";
 }
 
+if (empty($link)) {
+    $videoMessages['bad'][] = "Please enter the video LINK";
+} elseif (!preg_match($linkPattern, $link)) {
+    $videoMessages['bad'][] = "Please enter a valid LINK";
+}
+
 if (empty($date)) {
     $imageMessages['bad'][] = "Please select a DATE";
 }
@@ -45,23 +55,8 @@ if (count($lessonMessages['bad']) > 0) {
     header('Location: upload_lesson.php');
     exit();
 } else { // if no bad messages
-    $uploadDirectory = "lessonPlans/";
-
-    $uploadedFile = $_FILES['document']['tmp_name'];
-    $uploadedFileName = basename($_FILES['document']['name']);
-
-    $newFilePath = $uploadDirectory . $uploadedFileName;
-
-    if (!move_uploaded_file($uploadedFile, $newFilePath)) {
-        // Handle file move error
-        $lessonMessages['bad'][] = "Error moving the uploaded document.";
-        $_SESSION['lessonMessages'] = $lessonMessages;
-        header('Location: upload_lesson.php');
-        exit();
-    }
-
     // Save the document in database
-    $dao->saveDocument($subject, $newFilePath, $name, $date);
+    $dao->saveDocument($subject, $link, $name, $date);
     header('Location: lessonplan.php');
     exit();
 }
