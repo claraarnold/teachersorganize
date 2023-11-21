@@ -1,6 +1,7 @@
 <html>
 <head>
-    <link rel="stylesheet" href="login.css">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans"
+          rel="stylesheet" type="text/css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 

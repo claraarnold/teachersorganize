@@ -1,3 +1,5 @@
+@import url('http://fonts.googleapis.com/css?family=Open+Sans');
+
 body {
     margin: 0;
     font-family: Helvetica, sans-serif;
@@ -19,6 +21,7 @@ body {
 }
 
 .colored-box {
+    font-family: 'Open Sans', sans-serif;
     background-color: lightseagreen;
     padding: 20px 0;
     display: flex;
