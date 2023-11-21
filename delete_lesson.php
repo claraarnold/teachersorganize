@@ -22,6 +22,15 @@ $dao = new Dao();
 <header>
     <head>
         <link rel="stylesheet" href="upload_delete.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                var $lessonDeleteMessages = $(".message"); // Select elements with class 'message' once
+
+                $lessonDeleteMessages.fadeIn('slow'); // Fade in messages initially
+                $lessonDeleteMessages.fadeOut(5000); // Fade out messages after 5 seconds (adjust timing as needed)
+            });
+        </script>
     </head>
 </header>
 

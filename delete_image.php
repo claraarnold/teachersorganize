@@ -23,6 +23,15 @@ $dao = new Dao();
 <header>
     <head>
         <link rel="stylesheet" href="upload_delete.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                var $imageDeleteMessages = $(".message"); // Select elements with class 'message' once
+
+                $imageDeleteMessages.fadeIn('slow'); // Fade in messages initially
+                $imageDeleteMessages.fadeOut(5000); // Fade out messages after 5 seconds (adjust timing as needed)
+            });
+        </script>
     </head>
 </header>
 
