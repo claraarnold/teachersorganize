@@ -8,6 +8,15 @@ require_once("login_nav.php");
 
 <head>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            var $messages = $(".message"); // Select elements with class 'message' once
+
+            $messages.fadeIn('slow'); // Fade in messages initially
+            $messages.fadeOut(5000); // Fade out messages after 5 seconds (adjust timing as needed)
+        });
+    </script>
 </head>
 
 <body>
