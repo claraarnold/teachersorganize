@@ -22,18 +22,22 @@ session_start();
         <div class="form-block">
             <h1>Login</h1>
             <form method="post" action="login_handler.php">
-                <div id="login_form">First name: <input type="text"
-                                                        value = "<?php echo isset($_SESSION['post']['first']) ? $_SESSION['post']['first'] : ''; ?>"
-                                                        name="first"/></div>
-                <div id="login_form">Last name: <input type="text"
-                                                       value = "<?php echo isset($_SESSION['post']['last']) ? $_SESSION['post']['last'] : ''; ?>"
-                                                       name="last"/></div>
-                <div id="login_form">Username: <input type="text"
-                                                      value = "<?php echo isset($_SESSION['post']['username']) ? $_SESSION['post']['username'] : ''; ?>"
-                                                      name="username"/></div>
-                <div id="login_form">Password: <input type="password"
-                                                      value = "<?php echo isset($_SESSION['post']['password']) ? $_SESSION['post']['password'] : ''; ?>"
-                                                      name="password"/></div>
+                <div id="login_form"><label for="first name">First name:</label>
+                    <input type="text" value = "<?php echo isset($_SESSION['post']['first']) ? $_SESSION['post']['first'] : ''; ?>"
+                           name="first"/>
+                </div>
+                <div id="login_form"><label for="last name">Last name:</label>
+                    <input type="text" value = "<?php echo isset($_SESSION['post']['last']) ? $_SESSION['post']['last'] : ''; ?>"
+                           name="last"/>
+                </div>
+                <div id="login_form"><label for="username">Username:</label>
+                    <input type="text" value = "<?php echo isset($_SESSION['post']['username']) ? $_SESSION['post']['username'] : ''; ?>"
+                           name="username"/>
+                </div>
+                <div id="login_form"><label for="password">Password:</label>
+                    <input type="password" value = "<?php echo isset($_SESSION['post']['password']) ? $_SESSION['post']['password'] : ''; ?>"
+                           name="password"/>
+                </div>
                 <div id="submit_box"><input type="submit" name="Login" value="Login"/></div>
             </form>
             <h5>Or register for an account: <a href="register.php">Register</a></h5>

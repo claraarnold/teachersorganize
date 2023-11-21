@@ -39,14 +39,18 @@ $dao = new Dao();
     <div class="form-block">
         <h1>Upload a video below: </h1>
         <form method="post" action="video_upload_handler.php">
-            <div id="upload_form">Video title <input type="text"
-                                                     value = "<?php echo isset($_SESSION['post']['title']) ? $_SESSION['post']['title'] : ''; ?>"
-                                                     name="title"/></div>
-            <div id="upload_form">Video link <input type="text"
-                                                    value="<?php echo isset($_SESSION['post']['link']) ? $_SESSION['post']['link'] : ''; ?>"
-                                                    name="link"
-                                                    required pattern="https?://.+" title="https?://.+"></div>
-            <div id="upload_form">Date <input type="date" name="date"/></div>
+            <div id="upload_form"><label for="video title">Video title</label>
+                <input type="text" value = "<?php echo isset($_SESSION['post']['title']) ? $_SESSION['post']['title'] : ''; ?>"
+                       name="title"/>
+            </div>
+            <div id="upload_form"><label for="vidoe link">Video link</label>
+                <input type="text" value="<?php echo isset($_SESSION['post']['link']) ? $_SESSION['post']['link'] : ''; ?>"
+                       name="link"
+                       required pattern="https?://.+" title="https?://.+">
+            </div>
+            <div id="upload_form"><label for="date">Date</label>
+                <input type="date" name="date"/>
+            </div>
             <div id="submit_box"><input type="submit" name="Upload" value="Upload"/></div>
         </form>
     </div>

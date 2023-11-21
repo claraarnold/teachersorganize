@@ -40,9 +40,10 @@ $dao = new Dao();
 
     <h1>Delete an image below: </h1>
     <form method="post" action="image_delete_handler.php">
-        <div id="upload_form">Image title <input type="text"
-                                                 value = "<?php echo isset($_SESSION['post']['deleteImageTitle']) ? $_SESSION['post']['deleteImageTitle'] : ''; ?>"
-                                                 name="deleteImageTitle"/></div>
+        <div id="upload_form"><label for="image title">Image title</label>
+            <input type="text" value = "<?php echo isset($_SESSION['post']['deleteImageTitle']) ? $_SESSION['post']['deleteImageTitle'] : ''; ?>"
+                   name="deleteImageTitle"/>
+        </div>                                        name="deleteImageTitle"/></div>
         <div id="submit_box"><input type="submit" name="Delete" value="Delete"/></div>
     </form>
 </div>

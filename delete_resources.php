@@ -38,9 +38,10 @@ $dao = new Dao();
 <div class="form-block">
     <h1>Delete a document below: </h1>
     <form method="post" action="resources_delete_handler.php">
-        <div id="upload_form">Document Title <input type="text"
-                                                    value="<?php echo isset($_SESSION['post']['deleteDocumentTitle']) ? $_SESSION['post']['deleteDocumentTitle'] : ''; ?>"
-                                                    name="deleteDocumentTitle" /></div>
+        <div id="upload_form"><label for="document title">Document Title</label>
+            <input type="text" value="<?php echo isset($_SESSION['post']['deleteDocumentTitle']) ? $_SESSION['post']['deleteDocumentTitle'] : ''; ?>"
+                   name="deleteDocumentTitle" />
+        </div>                                            name="deleteDocumentTitle" /></div>
         <div id="submit_box"><input type="submit" name="Delete" value="Delete" /></div>
     </form>
 </div>

@@ -44,13 +44,15 @@ $dao = new Dao();
             <option value="Templates">Templates</option>
             <option value="Social-Emotional Exercises">Social-Emotional Exercises</option>
         </select>
-        <div id="upload_form">Document name <input type="text"
-                                                   value = "<?php echo isset($_SESSION['post']['name']) ? $_SESSION['post']['name'] : ''; ?>"
-                                                   name="name"/></div>
-        <div id="upload_form">Document link <input type="text"
-                                                   value="<?php echo isset($_SESSION['post']['link']) ? $_SESSION['post']['link'] : ''; ?>"
-                                                   name="link"
-                                                   required pattern="https?://.+" title="https?://.+"></div>
+        <div id="upload_form"><label for="document name">Document name</label>
+            <input type="text" value = "<?php echo isset($_SESSION['post']['name']) ? $_SESSION['post']['name'] : ''; ?>"
+                   name="name"/>
+        </div>
+        <div id="upload_form"><label for="document link">Document link</label>
+            <input type="text" value="<?php echo isset($_SESSION['post']['link']) ? $_SESSION['post']['link'] : ''; ?>"
+                   name="link"
+                   required pattern="https?://.+" title="https?://.+">
+        </div>
         <div class="submit-button">
             <input type="submit" name="upload" value="Upload Document">
         </div>
