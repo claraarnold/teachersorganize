@@ -1,6 +1,6 @@
 <html>
 <head>
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans"
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans"
           rel="stylesheet" type="text/css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
