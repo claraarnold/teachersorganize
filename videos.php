@@ -40,7 +40,7 @@
         <div class="persisted_header">
             <?php
             if (!empty($userFirstName)) {
-                echo "Welcome, $userFirstName!";
+                echo "Welcome, " . htmlspecialchars($userFirstName) . "!";
             }
             ?>
         </div>
@@ -87,8 +87,7 @@
                 <?php foreach ($videos as $video): ?>
                 <td>
                     <div class="video-box">
-                        <a href="<?php echo $video['link']; ?>"> <?php echo $video['title'];?> </a>
-
+                        <a href="<?php echo htmlspecialchars($video['link']); ?>"> <?php echo htmlspecialchars($video['title']);?> </a>
                     </div>
                 </td>
                 <?php $count++; ?>

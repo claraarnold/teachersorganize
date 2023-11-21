@@ -28,7 +28,7 @@
         <div class="persisted_header">
             <?php
             if (!empty($userFirstName)) {
-                echo "Welcome, $userFirstName!";
+                echo "Welcome, " . htmlspecialchars($userFirstName) . "!";
             }
             ?>
         </div>

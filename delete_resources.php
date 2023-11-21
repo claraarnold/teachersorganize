@@ -51,12 +51,12 @@ $dao = new Dao();
 if (isset($_SESSION['resourceDeleteMessages'])) {
     if (isset($_SESSION['resourceDeleteMessages']['bad'])) {
         foreach ($_SESSION['resourceDeleteMessages']['bad'] as $bad) {
-            echo "<div class='resourceDeleteMessages bad'>{$bad}</div>";
+            echo "<div class='resourceDeleteMessages bad'>" . htmlspecialchars($bad) . "</div>";
         }
     }
     if (isset($_SESSION['resourceDeleteMessages']['good'])) {
         foreach ($_SESSION['resourceDeleteMessages']['good'] as $good) {
-            echo "<div class='resourceDeleteMessages good'>{$good}</div>";
+            echo "<div class='resourceDeleteMessages good'>" . htmlspecialchars($good) . "</div>";
         }
     }
 }

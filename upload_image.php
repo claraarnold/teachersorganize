@@ -61,12 +61,12 @@ $dao = new Dao();
 if (isset($_SESSION['imageMessages'])) {
     if (isset($_SESSION['imageMessages']['bad'])) {
         foreach ($_SESSION['imageMessages']['bad'] as $bad) {
-            echo "<div class='imageMessages bad'>{$bad}</div>";
+            echo "<div class='imageMessages bad'>" . htmlspecialchars($bad) . "</div>";
         }
     }
     if (isset($_SESSION['imageMessages']['good'])) {
         foreach ($_SESSION['imageMessages']['good'] as $good) {
-            echo "<div class='imageMessages good'>{$good}</div>";
+            echo "<div class='imageMessages good'>" . htmlspecialchars($good) . "</div>";
         }
     }
 }

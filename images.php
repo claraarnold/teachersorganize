@@ -40,7 +40,7 @@ if (!empty($selectedDate)) {
 <div class="persisted_header">
     <?php
     if (!empty($userFirstName)) {
-        echo "Welcome, $userFirstName!";
+        echo "Welcome, " . htmlspecialchars($userFirstName) . "!";
     }
     ?>
 </div>
@@ -88,7 +88,7 @@ if (!empty($selectedDate)) {
         <?php foreach ($images as $image): ?>
         <td>
             <div class="image-box">
-                <a href="<?php echo $image['link']; ?>"> <?php echo $image['title'];?> </a>
+                <a href="<?php echo htmlspecialchars($image['link']); ?>"><?php echo htmlspecialchars($image['title']); ?></a>
             </div>
         </td>
         <?php $count++; ?>

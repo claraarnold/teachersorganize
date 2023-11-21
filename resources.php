@@ -30,7 +30,7 @@ if ($_SESSION['authenticated']) {
 <div class="persisted_header">
     <?php
     if (!empty($userFirstName)) {
-        echo "Welcome, $userFirstName!";
+        echo "Welcome, " . htmlspecialchars($userFirstName) . "!";
     }
     ?>
 </div>
@@ -61,8 +61,8 @@ if ($_SESSION['authenticated']) {
 
             if (!empty($documents)) {
                 foreach ($documents as $document) {
-                    $document_link = $document['link'];
-                    $document_name = $document['name'];
+                    $document_link = htmlspecialchars($document['link']);
+                    $document_name = htmlspecialchars($document['name']);
 
                     // new column for each document name
                     echo '<td>';echo '<a href="' . $document_link . '">' . $document_name . '</a>';

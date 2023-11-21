@@ -52,7 +52,7 @@ $nextYear = ($month < 12) ? $year : $year + 1;
 <div class="persisted_header">
     <?php
     if (!empty($userFirstName)) {
-        echo "Welcome, $userFirstName!";
+        echo "Welcome, " . htmlspecialchars($userFirstName) . "!";
     }
     // Other header content goes here
     ?>
